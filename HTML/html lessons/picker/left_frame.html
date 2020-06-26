@@ -1,0 +1,522 @@
+<HTML>
+<HEAD>
+<TITLE>Color Picker</TITLE>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var bg    = "#FFFFFF"; //Default bg is white
+var fg    = "#000000"; //Default fg is black
+var link  = "#0000FF"; //Default link is blue
+var vlink = "#663399"; //Default vlink is purple
+var alink = "#FF0000"; //Default alink is red
+
+var bold = "xb";
+var italic = "xi";
+var fontsize = "3";
+var fontface = "";
+var driveLetter = "";
+var imageFileName = "";
+var imageFilePath2 = "";
+
+function getRandom(max) {return (Math.floor(Math.random()*max))+1;}
+
+function SendColor(color)
+{
+   if (color != "none")
+   {
+      // Find out what is selected in the left frame (bg, text, link etc)
+      if      (top.cpleft.document.colors.elements[0].checked) { bg = color; top.cpleft.document.colors.custombgcolor.value = color }
+      else if (top.cpleft.document.colors.elements[1].checked) { fg = color;    bg = top.cpleft.document.colors.custombgcolor.value }
+      else if (top.cpleft.document.colors.elements[2].checked) { link = color;  bg = top.cpleft.document.colors.custombgcolor.value }
+      else if (top.cpleft.document.colors.elements[3].checked) { vlink = color; bg = top.cpleft.document.colors.custombgcolor.value }
+      else if (top.cpleft.document.colors.elements[4].checked) { alink = color; bg = top.cpleft.document.colors.custombgcolor.value }
+   }
+
+   // Find out if the bold box is checked
+   if (top.cpleft.document.colors.checkBold.checked) { bold = "b"; } else { bold = "xb"; }
+
+   // Find out if the italics box is checked
+   if (top.cpleft.document.colors.checkItalic.checked) { italic = "i"; } else { italic = "xi"; }
+
+   // Find out the font size selected
+   if      (top.cpleft.document.sizes.elements[0].checked) fontsize = "1";
+   else if (top.cpleft.document.sizes.elements[1].checked) fontsize = "2";
+   else if (top.cpleft.document.sizes.elements[2].checked) fontsize = "3";
+   else if (top.cpleft.document.sizes.elements[3].checked) fontsize = "4";
+   else if (top.cpleft.document.sizes.elements[4].checked) fontsize = "5";
+   else if (top.cpleft.document.sizes.elements[5].checked) fontsize = "6";
+   else if (top.cpleft.document.sizes.elements[6].checked) fontsize = "7";
+
+   // Determine font face selected (if any)
+   fontface = top.cpleft.document.colors.fontName.value;
+
+   // Small workaround because of a JavaScript bug in Netscape's File upload. (File upload value not imediately recognized in Netscape3.0)
+   top.cpleft.document.colors.fileUp.focus();
+   top.cpleft.document.colors.fileUp.blur();
+
+   // get background file name (if any)
+   if (top.cpleft.document.colors.fileUp.value.length > 3)
+   {
+      fileName = top.cpleft.document.colors.fileUp.value;
+
+      //get drive letter
+      driveLetter = fileName.charAt(0);
+      // get image file name (no path)
+      position = fileName.length;
+
+      while (fileName.charAt(position-1) != "\\")
+      {
+         position = position -1;
+      }
+      imageFileName = fileName.substring(fileName.length,position)
+
+      imageFilePath = fileName.substring(position-1,3)
+
+      // swap backward slashes for forward slashes
+      imageFilePath2 = SearchAndReplace(imageFilePath, "\\", "/");
+   }
+   else
+   {
+      driveLetter = "";
+      imageFileName = "";
+      imageFilePath2 = "";
+   }
+
+
+   // Recreate the right-hand frame based on the new settings:
+   WriteFrame();
+
+}
+
+
+
+
+function WriteFrame()
+{
+   // ad generation
+   AdLine = new Array();
+   AdLine[1] = "<A HREF=\"http://service.bfast.com/bfast/click?bfmid=12768212&siteid=22315569&bfpage=home\" TARGET=\"_top\"><IMG SRC=\"ads/nomonthlyfees_468x60_0" + getRandom(2) + ".gif\" BORDER=\"0\" WIDTH=\"468\" HEIGHT=\"60\" ALT=\"www.NoMonthlyFees.com\"></A>";
+   AdLine[2] = "<a href=\"http://www.commission-junction.com/track/track.dll?AID=14617&PID=517001&URL=http%3A%2F%2Fwww%2Eanimfactory%2Ecom\" target=\"_top\"><img src=\"ads/animationfactory_468x60_0" + getRandom(2) + ".gif\" width=\"468\" height=\"60\" alt=\"Free Animations\" border=\"0\"></a>";
+   thisAd = AdLine[getRandom(2)];
+
+   top.cpright.document.open();
+   top.cpright.document.writeln("<HTML>");
+   top.cpright.document.writeln("<HEAD>");
+   top.cpright.document.writeln("<TITLE>Color Picker - by pagetutor.com</TITLE>");
+   top.cpright.document.writeln("</HEAD>");
+   top.cpright.document.writeln("<BODY BGCOLOR=\"" + bg + "\" TEXT=\"" + fg + "\" LINK=\"" + link + "\" VLINK=\"" + vlink + "\" ALINK=\"" + alink + "\" BACKGROUND=\"file:///" + driveLetter + "|/" + imageFilePath2 + "/" + imageFileName + "\">");
+   top.cpright.document.writeln(thisAd);
+   top.cpright.document.writeln("<FONT face=\"trebuchet ms,verdana,arial\" color=\"" + fg + "\" size=\"5\"><B>Testing Site:</B></FONT>");
+   top.cpright.document.writeln("<FONT face=\"" + fontface + "\" size=\"" + fontsize + "\" color=\"" + fg + "\"><" + italic + "><" + bold + ">This is text<BR>Now is the time for all good men to come to the aid of their country.</bold></italic></FONT><P>");
+   top.cpright.document.writeln("<FONT face=\"" + fontface + "\" size=\"" + fontsize + "\" color=\"" + link + "\"><" + italic + "><" + bold + "><U>This is a link</U></" + bold + "></" + italic + "></FONT><P>");
+   top.cpright.document.writeln("<FONT face=\"" + fontface + "\" size=\"" + fontsize + "\" color=\"" + vlink + "\"><" + italic + "><" + bold + "><U>This is a visited link</U></" + bold + "></" + italic + "></FONT><P>");
+   top.cpright.document.writeln("<FONT face=\"" + fontface + "\" size=\"" + fontsize + "\" color=\"" + alink + "\"><" + italic + "><" + bold + "><U>This is an active link</U></" + bold + "></" + italic + "></FONT><P>");
+   top.cpright.document.writeln("<TABLE border=\"4\" cellpadding=\"2\" cellspacing=\"6\">");
+   top.cpright.document.writeln("<TR>");
+   top.cpright.document.writeln("<TD align=\"center\" colspan=\"3\">\&nbsp\;\&nbsp\;\&nbsp\;<FONT color=\"" + fg + "\">And this is a <TT>\&lt\;TABLE\&gt\;</TT></FONT>\&nbsp\;\&nbsp\;\&nbsp\;</TD>");
+   top.cpright.document.writeln("</TR>");
+   top.cpright.document.writeln("<TR>");
+   top.cpright.document.writeln("<TD width=\"33%\">\&nbsp\;</TD>");
+   top.cpright.document.writeln("<TD width=\"34%\">\&nbsp\;</TD>");
+   top.cpright.document.writeln("<TD width=\"33%\">\&nbsp\;</TD>");
+   top.cpright.document.writeln("</TR>");
+   top.cpright.document.writeln("</TABLE>");
+   top.cpright.document.writeln("<HR>");
+   top.cpright.document.writeln("Your <TT>\&lt\;BODY\&gt\;</TT> tag:<P>");
+   top.cpright.document.writeln("<TT><B>");
+   top.cpright.document.writeln("\&lt\;BODY<BR>");
+   top.cpright.document.writeln("\&nbsp\;BGCOLOR=\"" + bg + "\"<BR>");
+   top.cpright.document.writeln("\&nbsp\;BACKGROUND=\"" + imageFileName + "\"<BR>");
+   top.cpright.document.writeln("\&nbsp\;TEXT=\"" + fg + "\"<BR>");
+   top.cpright.document.writeln("\&nbsp\;LINK=\"" + link + "\"<BR>");
+   top.cpright.document.writeln("\&nbsp\;VLINK=\"" + vlink + "\"<BR>");
+   top.cpright.document.writeln("\&nbsp\;ALINK=\"" + alink + "\"\&gt\;\&lt\;!--<BR>");
+   top.cpright.document.writeln("\&nbsp\;BODY tag by Color Picker<BR>");
+   top.cpright.document.writeln("\&nbsp\;http://www.pagetutor.com/pagetutor/makapage/picker/<BR>");
+   top.cpright.document.writeln("\&nbsp\;*** *** *** --\&gt\;");
+   top.cpright.document.writeln("</B></TT>");
+   top.cpright.document.writeln("<P><FONT SIZE=2>Add font size & face attributes and bold & italic tags to your documents as needed. Also be sure to move your background image. For those that need it, these topics (and more) are covered in <A HREF=\"http://www.pagetutor.com/pagetutor/makapage/\" target=\"_top\"><I>\"So, you want to make a Web Page!\"</I></A><BR></FONT>");
+   top.cpright.document.writeln("<HR>");
+   top.cpright.document.writeln("For more information on Netscape's 216 color palette go <A HREF=\"http://www.pagetutor.com/pagetutor/makapage/net216/net216.html\" TARGET=\"_top\">here</A>.");
+   top.cpright.document.writeln("<HR>");
+   top.cpright.document.writeln("<B><FONT SIZE=4 face=\"courier new\"><A HREF=\"http://www.pagetutor.com/\" TARGET=\"_top\" STYLE=\"text-decoration:none\">pagetutor.com</A></FONT></B><P>");
+   top.cpright.document.writeln("</BODY>");
+   top.cpright.document.writeln("</HTML>");
+   top.cpright.document.close();
+}
+
+
+
+/*  SearchAndReplace - by Joe Barta
+Send it a string(item), character to remove(currentChar) and character
+to put in it's place(newChar) and the reworked string is returned.
+===================================================================*/
+function SearchAndReplace(item, currentChar, newChar)
+{
+   reworkedString = "";
+   for (x = 0; x < item.length + 1; x++)
+   {
+      xchar = item.substring(x, x+1);
+      if(xchar == currentChar) { xchar = newChar; }
+      reworkedString = reworkedString + xchar;
+   }
+   return reworkedString;
+}
+
+
+//  ------------------------------------------------------------------
+//    Many thanks to Scott Yanoff, whoever and wherever you are.
+//    His color picking script serves as the foundation for this one.
+//  ------------------------------------------------------------------
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+
+<MAP NAME="map_webpal">
+<!--- Row 1 --->
+   <AREA COORDS="2,2,18,18" HREF="javascript:{;}" onClick="SendColor('#330000');return false">
+   <AREA COORDS="18,2,34,18" HREF="javascript:{;}" onClick="SendColor('#333300');return false">
+   <AREA COORDS="34,2,50,18" HREF="javascript:{;}" onClick="SendColor('#336600');return false">
+   <AREA COORDS="50,2,66,18" HREF="javascript:{;}" onClick="SendColor('#339900');return false">
+   <AREA COORDS="66,2,82,18" HREF="javascript:{;}" onClick="SendColor('#33CC00');return false">
+   <AREA COORDS="82,2,98,18" HREF="javascript:{;}" onClick="SendColor('#33FF00');return false">
+
+   <AREA COORDS="98,2,114,18" HREF="javascript:{;}" onClick="SendColor('#66FF00');return false">
+   <AREA COORDS="114,2,130,18" HREF="javascript:{;}" onClick="SendColor('#66CC00');return false">
+   <AREA COORDS="130,2,146,18" HREF="javascript:{;}" onClick="SendColor('#669900');return false">
+   <AREA COORDS="146,2,162,18" HREF="javascript:{;}" onClick="SendColor('#666600');return false">
+   <AREA COORDS="162,2,178,18" HREF="javascript:{;}" onClick="SendColor('#663300');return false">
+   <AREA COORDS="178,2,194,18" HREF="javascript:{;}" onClick="SendColor('#660000');return false">
+
+   <AREA COORDS="194,2,210,18" HREF="javascript:{;}" onClick="SendColor('#FF0000');return false">
+   <AREA COORDS="210,2,226,18" HREF="javascript:{;}" onClick="SendColor('#FF3300');return false">
+   <AREA COORDS="226,2,242,18" HREF="javascript:{;}" onClick="SendColor('#FF6600');return false">
+   <AREA COORDS="242,2,258,18" HREF="javascript:{;}" onClick="SendColor('#FF9900');return false">
+   <AREA COORDS="258,2,274,18" HREF="javascript:{;}" onClick="SendColor('#FFCC00');return false">
+   <AREA COORDS="274,2,290,18" HREF="javascript:{;}" onClick="SendColor('#FFFF00');return false">
+
+<!--- Row 2 --->
+   <AREA COORDS="2,18,18,34" HREF="javascript:{;}" onClick="SendColor('#330033');return false">
+   <AREA COORDS="18,18,34,34" HREF="javascript:{;}" onClick="SendColor('#333333');return false">
+   <AREA COORDS="34,18,50,34" HREF="javascript:{;}" onClick="SendColor('#336633');return false">
+   <AREA COORDS="50,18,66,34" HREF="javascript:{;}" onClick="SendColor('#339933');return false">
+   <AREA COORDS="66,18,82,34" HREF="javascript:{;}" onClick="SendColor('#33CC33');return false">
+   <AREA COORDS="82,18,98,34" HREF="javascript:{;}" onClick="SendColor('#33FF33');return false">
+
+   <AREA COORDS="98,18,114,34" HREF="javascript:{;}" onClick="SendColor('#66FF33');return false">
+   <AREA COORDS="114,18,130,34" HREF="javascript:{;}" onClick="SendColor('#66CC33');return false">
+   <AREA COORDS="130,18,146,34" HREF="javascript:{;}" onClick="SendColor('#669933');return false">
+   <AREA COORDS="146,18,162,34" HREF="javascript:{;}" onClick="SendColor('#666633');return false">
+   <AREA COORDS="162,18,178,34" HREF="javascript:{;}" onClick="SendColor('#663333');return false">
+   <AREA COORDS="178,18,194,34" HREF="javascript:{;}" onClick="SendColor('#660033');return false">
+
+   <AREA COORDS="194,18,210,34" HREF="javascript:{;}" onClick="SendColor('#FF0033');return false">
+   <AREA COORDS="210,18,226,34" HREF="javascript:{;}" onClick="SendColor('#FF3333');return false">
+   <AREA COORDS="226,18,242,34" HREF="javascript:{;}" onClick="SendColor('#FF6633');return false">
+   <AREA COORDS="242,18,258,34" HREF="javascript:{;}" onClick="SendColor('#FF9933');return false">
+   <AREA COORDS="258,18,274,34" HREF="javascript:{;}" onClick="SendColor('#FFCC33');return false">
+   <AREA COORDS="274,18,290,34" HREF="javascript:{;}" onClick="SendColor('#FFFF33');return false">
+
+<!--- Row 3 --->
+   <AREA COORDS="2,34,18,50" HREF="javascript:{;}" onClick="SendColor('#330066');return false">
+   <AREA COORDS="18,34,34,50" HREF="javascript:{;}" onClick="SendColor('#333366');return false">
+   <AREA COORDS="34,34,50,50" HREF="javascript:{;}" onClick="SendColor('#336666');return false">
+   <AREA COORDS="50,34,66,50" HREF="javascript:{;}" onClick="SendColor('#339966');return false">
+   <AREA COORDS="66,34,82,50" HREF="javascript:{;}" onClick="SendColor('#33CC66');return false">
+   <AREA COORDS="82,34,98,50" HREF="javascript:{;}" onClick="SendColor('#33FF66');return false">
+
+   <AREA COORDS="98,34,114,50" HREF="javascript:{;}" onClick="SendColor('#66FF66');return false">
+   <AREA COORDS="114,34,130,50" HREF="javascript:{;}" onClick="SendColor('#66CC66');return false">
+   <AREA COORDS="130,34,146,50" HREF="javascript:{;}" onClick="SendColor('#669966');return false">
+   <AREA COORDS="146,34,162,50" HREF="javascript:{;}" onClick="SendColor('#666666');return false">
+   <AREA COORDS="162,34,178,50" HREF="javascript:{;}" onClick="SendColor('#663366');return false">
+   <AREA COORDS="178,34,194,50" HREF="javascript:{;}" onClick="SendColor('#660066');return false">
+
+   <AREA COORDS="194,34,210,50" HREF="javascript:{;}" onClick="SendColor('#FF0066');return false">
+   <AREA COORDS="210,34,226,50" HREF="javascript:{;}" onClick="SendColor('#FF3366');return false">
+   <AREA COORDS="226,34,242,50" HREF="javascript:{;}" onClick="SendColor('#FF6666');return false">
+   <AREA COORDS="242,34,258,50" HREF="javascript:{;}" onClick="SendColor('#FF9966');return false">
+   <AREA COORDS="258,34,274,50" HREF="javascript:{;}" onClick="SendColor('#FFCC66');return false">
+   <AREA COORDS="274,34,290,50" HREF="javascript:{;}" onClick="SendColor('#FFFF66');return false">
+
+<!--- Row 4 --->
+   <AREA COORDS="2,50,18,66" HREF="javascript:{;}" onClick="SendColor('#330099');return false">
+   <AREA COORDS="18,50,34,66" HREF="javascript:{;}" onClick="SendColor('#333399');return false">
+   <AREA COORDS="34,50,50,66" HREF="javascript:{;}" onClick="SendColor('#336699');return false">
+   <AREA COORDS="50,50,66,66" HREF="javascript:{;}" onClick="SendColor('#339999');return false">
+   <AREA COORDS="66,50,82,66" HREF="javascript:{;}" onClick="SendColor('#33CC99');return false">
+   <AREA COORDS="82,50,98,66" HREF="javascript:{;}" onClick="SendColor('#33FF99');return false">
+
+   <AREA COORDS="98,50,114,66" HREF="javascript:{;}" onClick="SendColor('#66FF99');return false">
+   <AREA COORDS="114,50,130,66" HREF="javascript:{;}" onClick="SendColor('#66CC99');return false">
+   <AREA COORDS="130,50,146,66" HREF="javascript:{;}" onClick="SendColor('#669999');return false">
+   <AREA COORDS="146,50,162,66" HREF="javascript:{;}" onClick="SendColor('#666699');return false">
+   <AREA COORDS="162,50,178,66" HREF="javascript:{;}" onClick="SendColor('#663399');return false">
+   <AREA COORDS="178,50,194,66" HREF="javascript:{;}" onClick="SendColor('#660099');return false">
+
+   <AREA COORDS="194,50,210,66" HREF="javascript:{;}" onClick="SendColor('#FF0099');return false">
+   <AREA COORDS="210,50,226,66" HREF="javascript:{;}" onClick="SendColor('#FF3399');return false">
+   <AREA COORDS="226,50,242,66" HREF="javascript:{;}" onClick="SendColor('#FF6699');return false">
+   <AREA COORDS="242,50,258,66" HREF="javascript:{;}" onClick="SendColor('#FF9999');return false">
+   <AREA COORDS="258,50,274,66" HREF="javascript:{;}" onClick="SendColor('#FFCC99');return false">
+   <AREA COORDS="274,50,290,66" HREF="javascript:{;}" onClick="SendColor('#FFFF99');return false">
+
+<!--- Row 5 --->
+   <AREA COORDS="2,66,18,82" HREF="javascript:{;}" onClick="SendColor('#3300CC');return false">
+   <AREA COORDS="18,66,34,82" HREF="javascript:{;}" onClick="SendColor('#3333CC');return false">
+   <AREA COORDS="34,66,50,82" HREF="javascript:{;}" onClick="SendColor('#3366CC');return false">
+   <AREA COORDS="50,66,66,82" HREF="javascript:{;}" onClick="SendColor('#3399CC');return false">
+   <AREA COORDS="66,66,82,82" HREF="javascript:{;}" onClick="SendColor('#33CCCC');return false">
+   <AREA COORDS="82,66,98,82" HREF="javascript:{;}" onClick="SendColor('#33FFCC');return false">
+
+   <AREA COORDS="98,66,114,82" HREF="javascript:{;}" onClick="SendColor('#66FFCC');return false">
+   <AREA COORDS="114,66,130,82" HREF="javascript:{;}" onClick="SendColor('#66CCCC');return false">
+   <AREA COORDS="130,66,146,82" HREF="javascript:{;}" onClick="SendColor('#6699CC');return false">
+   <AREA COORDS="146,66,162,82" HREF="javascript:{;}" onClick="SendColor('#6666CC');return false">
+   <AREA COORDS="162,66,178,82" HREF="javascript:{;}" onClick="SendColor('#6633CC');return false">
+   <AREA COORDS="178,66,194,82" HREF="javascript:{;}" onClick="SendColor('#6600CC');return false">
+
+   <AREA COORDS="194,66,210,82" HREF="javascript:{;}" onClick="SendColor('#FF00CC');return false">
+   <AREA COORDS="210,66,226,82" HREF="javascript:{;}" onClick="SendColor('#FF33CC');return false">
+   <AREA COORDS="226,66,242,82" HREF="javascript:{;}" onClick="SendColor('#FF66CC');return false">
+   <AREA COORDS="242,66,258,82" HREF="javascript:{;}" onClick="SendColor('#FF99CC');return false">
+   <AREA COORDS="258,66,274,82" HREF="javascript:{;}" onClick="SendColor('#FFCCCC');return false">
+   <AREA COORDS="274,66,290,82" HREF="javascript:{;}" onClick="SendColor('#FFFFCC');return false">
+
+<!--- Row 6 --->
+   <AREA COORDS="2,82,18,98" HREF="javascript:{;}" onClick="SendColor('#3300FF');return false">
+   <AREA COORDS="18,82,34,98" HREF="javascript:{;}" onClick="SendColor('#3333FF');return false">
+   <AREA COORDS="34,82,50,98" HREF="javascript:{;}" onClick="SendColor('#3366FF');return false">
+   <AREA COORDS="50,82,66,98" HREF="javascript:{;}" onClick="SendColor('#3399FF');return false">
+   <AREA COORDS="66,82,82,98" HREF="javascript:{;}" onClick="SendColor('#33CCFF');return false">
+   <AREA COORDS="82,82,98,98" HREF="javascript:{;}" onClick="SendColor('#33FFFF');return false">
+
+   <AREA COORDS="98,82,114,98" HREF="javascript:{;}" onClick="SendColor('#66FFFF');return false">
+   <AREA COORDS="114,82,130,98" HREF="javascript:{;}" onClick="SendColor('#66CCFF');return false">
+   <AREA COORDS="130,82,146,98" HREF="javascript:{;}" onClick="SendColor('#6699FF');return false">
+   <AREA COORDS="146,82,162,98" HREF="javascript:{;}" onClick="SendColor('#6666FF');return false">
+   <AREA COORDS="162,82,178,98" HREF="javascript:{;}" onClick="SendColor('#6633FF');return false">
+   <AREA COORDS="178,82,194,98" HREF="javascript:{;}" onClick="SendColor('#6600FF');return false">
+
+   <AREA COORDS="194,82,210,98" HREF="javascript:{;}" onClick="SendColor('#FF00FF');return false">
+   <AREA COORDS="210,82,226,98" HREF="javascript:{;}" onClick="SendColor('#FF33FF');return false">
+   <AREA COORDS="226,82,242,98" HREF="javascript:{;}" onClick="SendColor('#FF66FF');return false">
+   <AREA COORDS="242,82,258,98" HREF="javascript:{;}" onClick="SendColor('#FF99FF');return false">
+   <AREA COORDS="258,82,274,98" HREF="javascript:{;}" onClick="SendColor('#FFCCFF');return false">
+   <AREA COORDS="274,82,290,98" HREF="javascript:{;}" onClick="SendColor('#FFFFFF');return false">
+
+<!--- Row 7 --->
+   <AREA COORDS="2,98,18,114" HREF="javascript:{;}" onClick="SendColor('#0000FF');return false">
+   <AREA COORDS="18,98,34,114" HREF="javascript:{;}" onClick="SendColor('#0033FF');return false">
+   <AREA COORDS="34,98,50,114" HREF="javascript:{;}" onClick="SendColor('#0066FF');return false">
+   <AREA COORDS="50,98,66,114" HREF="javascript:{;}" onClick="SendColor('#0099FF');return false">
+   <AREA COORDS="66,98,82,114" HREF="javascript:{;}" onClick="SendColor('#00CCFF');return false">
+   <AREA COORDS="82,98,98,114" HREF="javascript:{;}" onClick="SendColor('#00FFFF');return false">
+
+   <AREA COORDS="98,98,114,114" HREF="javascript:{;}" onClick="SendColor('#99FFFF');return false">
+   <AREA COORDS="114,98,130,114" HREF="javascript:{;}" onClick="SendColor('#99CCFF');return false">
+   <AREA COORDS="130,98,146,114" HREF="javascript:{;}" onClick="SendColor('#9999FF');return false">
+   <AREA COORDS="146,98,162,114" HREF="javascript:{;}" onClick="SendColor('#9966FF');return false">
+   <AREA COORDS="162,98,178,114" HREF="javascript:{;}" onClick="SendColor('#9933FF');return false">
+   <AREA COORDS="178,98,194,114" HREF="javascript:{;}" onClick="SendColor('#9900FF');return false">
+
+   <AREA COORDS="194,98,210,114" HREF="javascript:{;}" onClick="SendColor('#CC00FF');return false">
+   <AREA COORDS="210,98,226,114" HREF="javascript:{;}" onClick="SendColor('#CC33FF');return false">
+   <AREA COORDS="226,98,242,114" HREF="javascript:{;}" onClick="SendColor('#CC66FF');return false">
+   <AREA COORDS="242,98,258,114" HREF="javascript:{;}" onClick="SendColor('#CC99FF');return false">
+   <AREA COORDS="258,98,274,114" HREF="javascript:{;}" onClick="SendColor('#CCCCFF');return false">
+   <AREA COORDS="274,98,290,114" HREF="javascript:{;}" onClick="SendColor('#CCFFFF');return false">
+
+<!--- Row 8 --->
+   <AREA COORDS="2,114,18,130" HREF="javascript:{;}" onClick="SendColor('#0000CC');return false">
+   <AREA COORDS="18,114,34,130" HREF="javascript:{;}" onClick="SendColor('#0033CC');return false">
+   <AREA COORDS="34,114,50,130" HREF="javascript:{;}" onClick="SendColor('#0066CC');return false">
+   <AREA COORDS="50,114,66,130" HREF="javascript:{;}" onClick="SendColor('#0099CC');return false">
+   <AREA COORDS="66,114,82,130" HREF="javascript:{;}" onClick="SendColor('#00CCCC');return false">
+   <AREA COORDS="82,114,98,130" HREF="javascript:{;}" onClick="SendColor('#00FFCC');return false">
+
+   <AREA COORDS="98,114,114,130" HREF="javascript:{;}" onClick="SendColor('#99FFCC');return false">
+   <AREA COORDS="114,114,130,130" HREF="javascript:{;}" onClick="SendColor('#99CCCC');return false">
+   <AREA COORDS="130,114,146,130" HREF="javascript:{;}" onClick="SendColor('#9999CC');return false">
+   <AREA COORDS="146,114,162,130" HREF="javascript:{;}" onClick="SendColor('#9966CC');return false">
+   <AREA COORDS="162,114,178,130" HREF="javascript:{;}" onClick="SendColor('#9933CC');return false">
+   <AREA COORDS="178,114,194,130" HREF="javascript:{;}" onClick="SendColor('#9900CC');return false">
+
+   <AREA COORDS="194,114,210,130" HREF="javascript:{;}" onClick="SendColor('#CC00CC');return false">
+   <AREA COORDS="210,114,226,130" HREF="javascript:{;}" onClick="SendColor('#CC33CC');return false">
+   <AREA COORDS="226,114,242,130" HREF="javascript:{;}" onClick="SendColor('#CC66CC');return false">
+   <AREA COORDS="242,114,258,130" HREF="javascript:{;}" onClick="SendColor('#CC99CC');return false">
+   <AREA COORDS="258,114,274,130" HREF="javascript:{;}" onClick="SendColor('#CCCCCC');return false">
+   <AREA COORDS="274,114,290,130" HREF="javascript:{;}" onClick="SendColor('#CCFFCC');return false">
+
+<!--- Row 9 --->
+   <AREA COORDS="2,130,18,146" HREF="javascript:{;}" onClick="SendColor('#000099');return false">
+   <AREA COORDS="18,130,34,146" HREF="javascript:{;}" onClick="SendColor('#003399');return false">
+   <AREA COORDS="34,130,50,146" HREF="javascript:{;}" onClick="SendColor('#006699');return false">
+   <AREA COORDS="50,130,66,146" HREF="javascript:{;}" onClick="SendColor('#009999');return false">
+   <AREA COORDS="66,130,82,146" HREF="javascript:{;}" onClick="SendColor('#00CC99');return false">
+   <AREA COORDS="82,130,98,146" HREF="javascript:{;}" onClick="SendColor('#00FF99');return false">
+
+   <AREA COORDS="98,130,114,146" HREF="javascript:{;}" onClick="SendColor('#99FF99');return false">
+   <AREA COORDS="114,130,130,146" HREF="javascript:{;}" onClick="SendColor('#99CC99');return false">
+   <AREA COORDS="130,130,146,146" HREF="javascript:{;}" onClick="SendColor('#999999');return false">
+   <AREA COORDS="146,130,162,146" HREF="javascript:{;}" onClick="SendColor('#996699');return false">
+   <AREA COORDS="162,130,178,146" HREF="javascript:{;}" onClick="SendColor('#993399');return false">
+   <AREA COORDS="178,130,194,146" HREF="javascript:{;}" onClick="SendColor('#990099');return false">
+
+   <AREA COORDS="194,130,210,146" HREF="javascript:{;}" onClick="SendColor('#CC0099');return false">
+   <AREA COORDS="210,130,226,146" HREF="javascript:{;}" onClick="SendColor('#CC3399');return false">
+   <AREA COORDS="226,130,242,146" HREF="javascript:{;}" onClick="SendColor('#CC6699');return false">
+   <AREA COORDS="242,130,258,146" HREF="javascript:{;}" onClick="SendColor('#CC9999');return false">
+   <AREA COORDS="258,130,274,146" HREF="javascript:{;}" onClick="SendColor('#CCCC99');return false">
+   <AREA COORDS="274,130,290,146" HREF="javascript:{;}" onClick="SendColor('#CCFF99');return false">
+
+<!--- Row 10 --->
+   <AREA COORDS="2,146,18,162" HREF="javascript:{;}" onClick="SendColor('#000066');return false">
+   <AREA COORDS="18,146,34,162" HREF="javascript:{;}" onClick="SendColor('#003366');return false">
+   <AREA COORDS="34,146,50,162" HREF="javascript:{;}" onClick="SendColor('#006666');return false">
+   <AREA COORDS="50,146,66,162" HREF="javascript:{;}" onClick="SendColor('#009966');return false">
+   <AREA COORDS="66,146,82,162" HREF="javascript:{;}" onClick="SendColor('#00CC66');return false">
+   <AREA COORDS="82,146,98,162" HREF="javascript:{;}" onClick="SendColor('#00FF66');return false">
+
+   <AREA COORDS="98,146,114,162" HREF="javascript:{;}" onClick="SendColor('#99FF66');return false">
+   <AREA COORDS="114,146,130,162" HREF="javascript:{;}" onClick="SendColor('#99CC66');return false">
+   <AREA COORDS="130,146,146,162" HREF="javascript:{;}" onClick="SendColor('#999966');return false">
+   <AREA COORDS="146,146,162,162" HREF="javascript:{;}" onClick="SendColor('#996666');return false">
+   <AREA COORDS="162,146,178,162" HREF="javascript:{;}" onClick="SendColor('#993366');return false">
+   <AREA COORDS="178,146,194,162" HREF="javascript:{;}" onClick="SendColor('#990066');return false">
+
+   <AREA COORDS="194,146,210,162" HREF="javascript:{;}" onClick="SendColor('#CC0066');return false">
+   <AREA COORDS="210,146,226,162" HREF="javascript:{;}" onClick="SendColor('#CC3366');return false">
+   <AREA COORDS="226,146,242,162" HREF="javascript:{;}" onClick="SendColor('#CC6666');return false">
+   <AREA COORDS="242,146,258,162" HREF="javascript:{;}" onClick="SendColor('#CC9966');return false">
+   <AREA COORDS="258,146,274,162" HREF="javascript:{;}" onClick="SendColor('#CCCC66');return false">
+   <AREA COORDS="274,146,290,162" HREF="javascript:{;}" onClick="SendColor('#CCFF66');return false">
+
+<!--- Row 11 --->
+   <AREA COORDS="2,162,18,178" HREF="javascript:{;}" onClick="SendColor('#000033');return false">
+   <AREA COORDS="18,162,34,178" HREF="javascript:{;}" onClick="SendColor('#003333');return false">
+   <AREA COORDS="34,162,50,178" HREF="javascript:{;}" onClick="SendColor('#006633');return false">
+   <AREA COORDS="50,162,66,178" HREF="javascript:{;}" onClick="SendColor('#009933');return false">
+   <AREA COORDS="66,162,82,178" HREF="javascript:{;}" onClick="SendColor('#00CC33');return false">
+   <AREA COORDS="82,162,98,178" HREF="javascript:{;}" onClick="SendColor('#00FF33');return false">
+
+   <AREA COORDS="98,162,114,178" HREF="javascript:{;}" onClick="SendColor('#99FF33');return false">
+   <AREA COORDS="114,162,130,178" HREF="javascript:{;}" onClick="SendColor('#99CC33');return false">
+   <AREA COORDS="130,162,146,178" HREF="javascript:{;}" onClick="SendColor('#999933');return false">
+   <AREA COORDS="146,162,162,178" HREF="javascript:{;}" onClick="SendColor('#996633');return false">
+   <AREA COORDS="162,162,178,178" HREF="javascript:{;}" onClick="SendColor('#993333');return false">
+   <AREA COORDS="178,162,194,178" HREF="javascript:{;}" onClick="SendColor('#990033');return false">
+
+   <AREA COORDS="194,162,210,178" HREF="javascript:{;}" onClick="SendColor('#CC0033');return false">
+   <AREA COORDS="210,162,226,178" HREF="javascript:{;}" onClick="SendColor('#CC3333');return false">
+   <AREA COORDS="226,162,242,178" HREF="javascript:{;}" onClick="SendColor('#CC6633');return false">
+   <AREA COORDS="242,162,258,178" HREF="javascript:{;}" onClick="SendColor('#CC9933');return false">
+   <AREA COORDS="258,162,274,178" HREF="javascript:{;}" onClick="SendColor('#CCCC33');return false">
+   <AREA COORDS="274,162,290,178" HREF="javascript:{;}" onClick="SendColor('#CCFF33');return false">
+
+<!--- Row 12 --->
+   <AREA COORDS="2,178,18,194" HREF="javascript:{;}" onClick="SendColor('#000000');return false">
+   <AREA COORDS="18,178,34,194" HREF="javascript:{;}" onClick="SendColor('#003300');return false">
+   <AREA COORDS="34,178,50,194" HREF="javascript:{;}" onClick="SendColor('#006600');return false">
+   <AREA COORDS="50,178,66,194" HREF="javascript:{;}" onClick="SendColor('#009900');return false">
+   <AREA COORDS="66,178,82,194" HREF="javascript:{;}" onClick="SendColor('#00CC00');return false">
+   <AREA COORDS="82,178,98,194" HREF="javascript:{;}" onClick="SendColor('#00FF00');return false">
+
+   <AREA COORDS="98,178,114,194" HREF="javascript:{;}" onClick="SendColor('#99FF00');return false">
+   <AREA COORDS="114,178,130,194" HREF="javascript:{;}" onClick="SendColor('#99CC00');return false">
+   <AREA COORDS="130,178,146,194" HREF="javascript:{;}" onClick="SendColor('#999900');return false">
+   <AREA COORDS="146,178,162,194" HREF="javascript:{;}" onClick="SendColor('#996600');return false">
+   <AREA COORDS="162,178,178,194" HREF="javascript:{;}" onClick="SendColor('#993300');return false">
+   <AREA COORDS="178,178,194,194" HREF="javascript:{;}" onClick="SendColor('#990000');return false">
+
+   <AREA COORDS="194,178,210,194" HREF="javascript:{;}" onClick="SendColor('#CC0000');return false">
+   <AREA COORDS="210,178,226,194" HREF="javascript:{;}" onClick="SendColor('#CC3300');return false">
+   <AREA COORDS="226,178,242,194" HREF="javascript:{;}" onClick="SendColor('#CC6600');return false">
+   <AREA COORDS="242,178,258,194" HREF="javascript:{;}" onClick="SendColor('#CC9900');return false">
+   <AREA COORDS="258,178,274,194" HREF="javascript:{;}" onClick="SendColor('#CCCC00');return false">
+   <AREA COORDS="274,178,290,194" HREF="javascript:{;}" onClick="SendColor('#CCFF00');return false">
+</MAP>
+
+
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 width=292>
+
+<TR><TD VALIGN="top"><IMG SRC="colorpicker1.gif" WIDTH="178" HEIGHT="36" BORDER="0" ALT="ColorPicker"></TD>
+    <TD VALIGN="top"><A HREF="http://www.pagetutor.com/" TARGET="_top"><IMG SRC="colorpicker2.gif" WIDTH="114" HEIGHT="36" BORDER="0" ALT="pagetutor.com"></A></TD></TR>
+
+<TR><TD VALIGN="top" colspan=2><A HREF="webpal.map"><IMG SRC="net216.gif" width=292 height=196 border=0 alt="" USEMAP="#map_webpal" ISMAP></A></TD></TR>
+
+<FORM NAME="colors"><!-- start form 1 -->
+
+<TR><TD align=center colspan=2 VALIGN="top">
+    <INPUT TYPE="radio" NAME="choice" VALUE="bg" CHECKED><FONT SIZE=2 face="arial">Background</FONT>&nbsp;&nbsp;&nbsp;
+    <INPUT TYPE="radio" NAME="choice" VALUE="text"><FONT SIZE=2 face="arial">Text</FONT>&nbsp;&nbsp;&nbsp;
+    <INPUT TYPE="radio" NAME="choice" VALUE="link"><FONT SIZE=2 face="arial">Link</FONT><BR>
+    <INPUT TYPE="radio" NAME="choice" VALUE="vlink"><FONT SIZE=2 face="arial">Visited Link</FONT>&nbsp;&nbsp;&nbsp;
+    <INPUT TYPE="radio" NAME="choice" VALUE="alink"><FONT SIZE=2 face="arial">Active Link</FONT></TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=1></TD></TR>
+
+<TR><TD align=center colspan=2 VALIGN="top">
+    <FONT SIZE=2 face="arial">Custom BGCOLOR * :</FONT>&nbsp;
+    <FONT SIZE=2 face="arial"><INPUT TYPE="text" NAME="custombgcolor" size=10 maxlength=7 value="#FFFFFF" onChange="SendColor(top.cpleft.document.colors.custombgcolor.value)"></FONT></TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=1></TD></TR>
+
+<TR><TD align=center colspan=2 VALIGN="top">
+<FONT SIZE=2 face="arial">Choose a background image (optional):</FONT><BR>
+<FONT SIZE=2 face="arial"><INPUT NAME="fileUp" TYPE=file SIZE=18 onClick="SendColor('none')"></FONT></TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=1></TD></TR>
+
+<TR><TD align=center colspan=2 VALIGN="top">
+    <INPUT TYPE="checkbox" NAME="checkBold" onClick="SendColor('none')"><FONT SIZE=2 face="arial"><B>Bold</B></FONT>&nbsp;&nbsp;&nbsp;
+    <INPUT TYPE="checkbox" NAME="checkItalic" onClick="SendColor('none')"><FONT SIZE=2 face="arial"><I>Italic</I></FONT></TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=1></TD></TR>
+
+<TR><TD align=center colspan=2 VALIGN="top">
+    <FONT SIZE=2 face="ms sans serif,verdana">Font Name:</FONT>&nbsp;
+    <FONT SIZE=2 face="arial"><INPUT TYPE="text" NAME="fontName" size=18" onChange="SendColor('none')"></FONT></TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=1></TD></TR>
+
+</FORM><!-- end form 1 -->
+
+<FORM NAME="sizes"><!-- start form 2 -->
+
+<TR><TD align=center colspan=2 VALIGN="top">
+<FONT SIZE=2 face="arial">Size:</FONT>&nbsp;
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">1</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">2</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')" checked><FONT SIZE=2 face="arial">3</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">4</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">5</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">6</FONT>
+<INPUT TYPE="radio" NAME="size" onClick="SendColor('none')"><FONT SIZE=2 face="arial">7</FONT>
+</TD></TR>
+
+<!-- Line --><TR><TD align=center colspan=2 VALIGN="top"><IMG SRC="dot_gray.gif" width=288 height=2></TD></TR>
+
+</FORM><!-- end form 2 -->
+</TABLE>
+
+<P STYLE="padding-left:8px; padding-right:6px"><FONT SIZE=1 face="verdana">* When entering a Custom BGCOLOR you should include the # symbol. Click <A HREF="bgcolors1536.html" TARGET="_blank">here</A> for a chart of 1500+ colors.<BR></FONT>
+<P STYLE="padding-left:8px; padding-right:6px"><FONT SIZE=1 face="verdana">Colors are from Netscape's 216 color pallete. Colors chosen from this picker will look the same to almost everyone. To clear form and return to default settings hit <B>SHIFT+Reload</B>.<BR></FONT>
+<P STYLE="padding-left:8px; padding-right:6px"><FONT SIZE=1 face="verdana"><B>Color Picker</B> is <A HREF="file:///D:/Hoven/Tutorials2/picker/picker.zip" TARGET="_top">available for download</A> in zip format.<BR></FONT>
+<P STYLE="padding-left:8px; padding-right:6px; padding-bottom:10px" ALIGN="center"><FONT SIZE=2 face="verdana"><B>ColorPicker version 1.51</B></FONT>
+
+
+<SCRIPT language="JavaScript"><!--
+SendColor("#FFFFFF");
+//--></SCRIPT>
+
+</BODY>
+</HTML>

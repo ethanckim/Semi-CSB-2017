@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+h1 {
+	color:#0078B3;
+	font-size:36px;
+}
+
+h2 {
+	color:#00CDF8;
+	font-size:28px;
+	
+}
+
+div.menu {
+	background-color:#6CFFEA;
+	float:left;
+	width:150px;
+	font-size:18px;
+}
+
+div.float {
+	float:right;
+}
+
+a {
+	color:#50531C;
+	text-decoration:underline;
+}
+
+a:hover {
+	background:#D3D08A;
+}
+
+div.header {
+	text-transform:uppercase;
+	color:#BF6B00;
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:20px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+span.bigbadbold {
+	font-size:20px;
+	font-weight:bold;
+	display:inline;
+}
+
+ul.bullet {
+	list-style:square;
+	text-align:left;
+}
+
+ol.numbers {
+	list-style:decimal;
+	font-weight:bold;
+	text-align:left;
+}
+
+table {
+	border-color:black;
+	border-width:2px;
+	border-style:ridge;
+	padding:0px;
+	color:black;
+}
+
+td {
+	padding:6px;
+	bprder-color:black;
+	border-width:2px;
+	border-style:ridge;
+}

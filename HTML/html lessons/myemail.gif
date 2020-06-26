@@ -1,0 +1,238 @@
+<HTML>
+<HEAD>
+<TITLE>404 File Not Found</TITLE>
+<META NAME="DESCRIPTION" CONTENT="Visit Pagetutor for web design, free html tutorials, frames, mouseover tutorial, javascript tutorial, password, and professional web design service.">
+<META NAME="KEYWORDS" CONTENT="free html tutorials, MouseOver tutorial, javascript tutorial, pagetutor, web design, HTML, tables, frames tutorial, forms, password protection, gatekeeper, gate keeper, magic buttons, color picker">
+<META NAME="GENERATOR" CONTENT="Grey Matter Web Pro - http://www.pagetutor.com/misc/grey.html">
+<SCRIPT language="JavaScript"><!--
+// navigation variables
+PathAndPage = "notfound";
+DepthOfPage = 0;
+navline1 = "<P CLASS=\"ptnav\">You are here:\&nbsp\;\&nbsp\;\&nbsp\;";
+navline2 = "<A CLASS=\"ptnav\" TARGET=\"_top\" HREF=\"http://www.pagetutor.com/\">Home</A> » ";
+navline3 = "<A CLASS=\"ptnav2\" TARGET=\"_top\" HREF=\"notfound.html\">File not found</A>";
+navline4 = "";
+navline5 = "";
+navline6 = "";
+navline7 = "";
+navline8 = "";
+navline9 = "</P>";
+navline = navline1 + navline2 + navline3 + navline4 + navline5 + navline6 + navline7 + navline8 + navline9;
+//--></SCRIPT>
+<SCRIPT language="JavaScript" SRC="tack/common.js"></SCRIPT>
+<LINK REL="stylesheet" TYPE="text/css" HREF="tack/common.css">
+
+</HEAD>
+<BODY MARGINHEIGHT="0" MARGINWIDTH="0" LEFTMARGIN="0" TOPMARGIN="0" BGCOLOR="#FFFFFF">
+
+
+
+<!-- Header table start -->
+<TABLE CELLSPACING="0" CELLPADDING="0" BORDER="0" WIDTH="100%">
+
+<!-- NavLine -->
+<TR><TD CLASS="blue" COLSPAN="2"><SCRIPT language="JavaScript">document.write(navline);</SCRIPT></TD></TR>
+<TR><TD CLASS="white" COLSPAN="2"><IMG SRC="tack/empty.gif" WIDTH="1" HEIGHT="3" BORDER="0" ALT=""></TD></TR>
+
+<TR><TD CLASS="white" VALIGN="bottom"><A HREF="http://www.pagetutor.com/" TARGET="_top"><IMG SRC="tack/ptlogos/ptlogo.gif" WIDTH="242" HEIGHT="68" BORDER="0" ALT="pagetutor.com - HTML tutorials for the rest of us" VSPACE="5"></A></TD>
+
+<!-- top ad -->
+<TD CLASS="white" ALIGN="center" WIDTH="96%">
+<!-- FASTCLICK.COM v1.2 for pagetutor.com -->
+<script language="Javascript"><!-- 
+{var a=b=c=d=e=h=i=j=l=n=p=s=t=u=v=w=x=y=z=dc='';
+var id=o=k=f=0;  var jar=new Date(); var f=jar.getSeconds() * jar.getMinutes();
+dc=document;  n=navigator;  v=parseFloat(n.appVersion);  e=escape(dc.referrer);
+dc.cookie='mc=y'; j=(n.javaEnabled()? 'Y':'N'); c=(dc.cookie.length>0?'Y':'N');
+if(v>=4){x=screen; } if(n.appName.indexOf('Mic')>=0) {o=1; } if(v>=4){ id=3157;
+if(o==1){s=x.colorDepth}w=x.width;h=x.height;}x='|';p=w+x+h+x+s+'||||'+j+x+c+x;
+u='ht'+'tp://media.fastclick.net/w'; c=' alt="Click"></a>'; x='/get.media?t=s';
+l=' width=468 height=60 border=0 ';t=l+'marginheight=0 marginwidth=';b='&sid=';
+i=u+x+b+id+'&m=1&f=a&v=1.2&c='+f+'&j='+p+'&r='+e;d='ameborder=0 scrolling=no>';
+u = '<a  hr'+'ef="'+u+'/cli'+'ck.here?sid='+id+'&m=1&c='+f+'"  target="_top">';
+dc.writeln('<ifr'+'ame src="'+i+'&d=f"'+t+'0 hspace=0 vspace=0 fr'+d);if(o!=1){
+dc.writeln(u+'<i'+'mg sr'+'c="'+i+'&d=n"'+l+c);}dc.writeln('</iframe>');}// -->
+</script><noscript><a 
+href="http://media.fastclick.net/w/click.here?sid=3157&m=1&c=1"  target="_top">
+<img src="http://media.fastclick.net/w/get.media?sid=3157&m=1&d=s&c=1&f=a&v=1.2
+" width=468 height=60 border=1></a>
+</noscript>
+<!-- FASTCLICK.COM v1.2 for pagetutor.com -->
+</TD></TR>
+
+<TR><TD COLSPAN="2" CLASS="mdgray"><IMG SRC="tack/empty.gif" WIDTH="1" HEIGHT="1" BORDER="0" ALT=""></TD></TR>
+<TR><TD COLSPAN="2"><IMG SRC="tack/empty.gif" WIDTH="1" HEIGHT="20" BORDER="0" ALT=""></TD></TR>
+</TABLE>
+<!-- Header table end -->
+
+
+
+
+<!-- Main table start -->
+<TABLE CELLSPACING="0" CELLPADDING="5" BORDER="0" WIDTH="100%">
+<TR>
+<TD CLASS="white" VALIGN="top">
+
+
+<!-- QUICK SITE GUIDE start -->
+<P><TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0" CLASS="sidebar"><TR><TD>
+   <TABLE CELLSPACING="0" CELLPADDING="0" BORDER="0">
+   <TR><TD CLASS="green" ALIGN="center"><P CLASS="sidebarhd">QUICK SITE GUIDE</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb_sm" HREF="tack/toc.html" TARGET="_top">SITE MAP</A></TD></TR>
+
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/" TARGET="_top">HOME</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/members/index.html" TARGET="_top">MEMBER'S HOME</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/search.html">SEARCH THIS SITE</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="pagetutor/other/faqs.html" TARGET="_top">FAQ</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/membership/index.html" TARGET="_top">MEMBERSHIP INFO</A></TD></TR>
+
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="pagetutor/index.html">PageTutor</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">&nbsp;&nbsp;<A CLASS="sidebarb" HREF="pagetutor/makapage/index.html" TARGET="_top">Basic HTML Tutor<IMG SRC="tack/star_red.gif" WIDTH="10" HEIGHT="10" HSPACE="4" BORDER="0"></A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">&nbsp;&nbsp;<A CLASS="sidebar" HREF="pagetutor/makapage/picker/index.html" TARGET="_blank">ColorPicker</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">&nbsp;&nbsp;<A CLASS="sidebar" HREF="pagetutor/makapage/upload.html" TARGET="_top">Upload Your Page</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">&nbsp;&nbsp;<A CLASS="sidebar" HREF="pagetutor/exercises/index.html" TARGET="_top">Practice Exercises</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="tack/barebones/barebone.html" TARGET="_top">Barebones HTML Guide</A></TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/membership/index.html" TARGET="_top">PageTutor Book & Companion CD</A> - take PageTutor anywhere.</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/idiot/idiot.html" TARGET="_top">How to keep an idiot busy</A> - a classic little amusement.</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/weblinks/index.html" TARGET="_top">Web Resources</A> - a listing of quality resources useful to any web author... graphics, javascripts, cgi, etc.</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/keeper/index.html" TARGET="_top">GateKeeper</A> - cool password protection with javascript.</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/buttons/index.html" TARGET="_top">Magic Buttons</A> - learn to make javascript mouseovers.</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/javascript/" TARGET="_top">Javascript Tutor</A> <B STYLE="background-color:FFFF00;color:FF0000;font-weight:bold">&nbsp;NEW!&nbsp;</B> - A solid beginner's javascript course (print version available)</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/cssprimer/" TARGET="_top">CSS Primer</A> <B STYLE="background-color:FFFF00;color:FF0000;font-weight:bold">&nbsp;NEW!&nbsp;</B> - Basic Style Sheets 101</TD></TR>
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt_nl"><A CLASS="sidebarb" HREF="http://www.pagetutor.com/metaprimer/" TARGET="_top">Meta Tag Primer</A><B STYLE="background-color:FFFF00;color:FF0000;font-weight:bold">&nbsp;NEW!&nbsp;</B> - Learn about META tags and effective search engine ranking strategies</TD></TR>
+
+   <TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/empty.gif" WIDTH="180" HEIGHT="3" BORDER="0" ALT=""></TD></TR>
+   </TABLE>
+</TD></TR></TABLE>
+<!-- QUICK SITE GUIDE end -->
+
+<form name="mt" action="http://www.marketingtips.com/t.cgi/46811" method="GET" target="_blank">
+<!-- OFFERS start -->
+<P><TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0" CLASS="sidebar"><TR><TD>
+   <TABLE CELLSPACING="0" CELLPADDING="0" BORDER="0">
+   <TR><TD CLASS="green" ALIGN="center"><P CLASS="sidebarhd">WEBMASTER OFFERS</TD></TR>
+   <!-- padding --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/empty.gif" WIDTH="180" HEIGHT="6" BORDER="0" ALT=""></TD></TR>
+
+   <!-- nomonthlyfees.com -->
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><IMG SRC="tack/hot2.gif" WIDTH="28" HEIGHT="22" BORDER="0" ALIGN="left"><A CLASS="sidebarb" HREF="http://service.bfast.com/bfast/click?bfmid=12768212&siteid=22315569&bfpage=home" TARGET="_top">Lifetime Web Hosting</A> - 200Mb for $200 + $35/annual fee - 10 Day FREE TRIAL - FREE Domain Name - 24/7 Tech Support - Site Creation Tool - <B>NoMonthlyFees.com</B><IMG SRC="http://service.bfast.com/bfast/serve?bfmid=12768212&siteid=22315569&bfpage=home" BORDER="0" WIDTH="1" HEIGHT="1" NOSAVE></TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- animation factory -->
+   <TR><TD CLASS="white"><P CLASS="sidebarsm" ALIGN="center">
+<!-- animation factory --><a href="http://www.qksrv.net/click-517001-44343" target="_top"><img src="http://www.qksrv.net/image-517001-44343" width="100" height="100" alt="Animation of the Day" border="0"></a>
+
+
+   </TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- marketingtips.com -->
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">Learn how to get <A CLASS="sidebarb" HREF="http://www.marketingtips.com/t.cgi/46811" TARGET="_blank">more hits to your website!</A></TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- 123hostme -->
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">Don't settle for a wimp server <a CLASS="sidebarb" href="http://www.qksrv.net/click-517001-1529566" target="_top" >Get a Monster server</a> with 123 HostMe<img src="http://www.qksrv.net/image-517001-1529566" width="1" height="1" border="0"></TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- marketingtips.com -->
+   <TR><TD CLASS="ltblue"><P CLASS="sidebar00" ALIGN="center">
+     <table border="0" cellpadding="0" cellspacing="0" ALIGN="center">
+     <tr><td ALIGN="center"><FONT FACE="verdana" SIZE="1">Show me how to<BR><B>promote my website</B> with:<BR></FONT></td></tr>
+     <tr><td align="center"><FONT FACE="arial" SIZE="1">
+     <select STYLE="font-size:8pt;" onChange="document.mt.submit();">
+     <option>Choose Selection</option>
+     <option>Effective websites and design</option>
+     <option>Search engines</option>
+     <option>Newsletters</option>
+     <option>Newsgroups</option>
+     <option>Online service (ie: AOL)</option>
+     <option>Online classified ads</option>
+     <option>Discussion lists</option>
+     <option>Responsible bulk email</option>
+     <option>Autoresponders</option>
+     <option>Bulletin boards</option>
+     <option>Electronic malls</option>
+     <option>Killer sales copy</option>
+     <option>Banner ads (tips and tricks)</option>
+     </select></FONT></td></tr></table>
+   </TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- commision junction -->
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt">Earn $25, $50, $100 or more from your web site... Online merchants will pay you to host their links and refer customers. <a CLASS="sidebarb" href="http://www.qksrv.net/click-517001-14897" TARGET="_top">Click here to learn more.</a><img src="http://www.qksrv.net/image-517001-14897" width="1" height="1" border="0"></TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- gifart -->
+   <TR><TD CLASS="white"><P CLASS="sidebarsm" ALIGN="center">
+<!-- a better way --><a href="http://www.qksrv.net/click-517001-1192974" target="_top"><img src="http://www.qksrv.net/image-517001-1192974" width="125" height="125" alt="A Better Way Credit Counseling" border="0"></a>
+
+   </TD></TR>
+   <!-- separator --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/dot_gray.gif" WIDTH="160" HEIGHT="1" BORDER="0" ALT="--------" VSPACE="2"></TD></TR>
+
+   <!-- affordablehost.com -->
+   <TR><TD CLASS="white"><P CLASS="sidebar_txt"><A CLASS="sidebarb" HREF="http://www.affordablehost.com/pagetutor.html" TARGET="_top">AffordableHost.com</A> - Quality web hosting from $45/year. Top flight service, unbeatable rates and 5 full featured hosting plans to choose from. PERFECT HOST FOR A SMALL BUSINESS OR ORGANIZATION.</TD></TR>
+   <!-- bottom link - no separator -->
+
+   <!-- padding --><TR><TD CLASS="white" ALIGN="center"><P CLASS="sidebar00"><IMG SRC="tack/empty.gif" WIDTH="180" HEIGHT="8" BORDER="0" ALT=""></TD></TR>
+   </TABLE>
+</TD></TR></TABLE>
+<!-- OFFERS end -->
+</form> 
+
+</TD>
+<TD VALIGN="top" WIDTH="95%">
+
+
+<DIV>
+
+
+<!--content -->
+
+
+<BLOCKQUOTE>
+
+<P>&nbsp;
+
+<P><FONT SIZE=+2><B>404 File Not Found</B></FONT>
+
+<P>The file you were looking for was not found. Almost without a doubt, it's still here. It just may have been moved.
+
+<P>Try the <A HREF="tack/toc.html"><FONT SIZE="+1">Site Map</FONT></A>. It has a pretty extensive listing of everything that's here. Plus you might even find a few MORE neat things to check out.<IMG SRC="tack/smiley_content.gif" WIDTH="26" HEIGHT="25" BORDER="0" ALT="" ALIGN="top" HSPACE="4">
+
+<P><IMG SRC="tack/joebarta.gif" WIDTH="126" HEIGHT="39" BORDER="0" ALT="Joe Barta">
+
+<P>&nbsp;
+
+</BLOCKQUOTE>
+
+
+
+
+ 
+
+
+
+<P ALIGN="center">
+<!-- marketingtips.com --><a href="http://www.marketingtips.com/t.cgi/46811/" target="_blank"><img src="http://www.marketingtips.com/images/imc-02.gif" border="0" width="468" height="60" ALT="Increase online sales!"></a>
+
+</P>
+
+ 
+<P ALIGN="center"><SCRIPT language="JavaScript">document.write(leline);</SCRIPT><NOSCRIPT><iframe src="http://leader.linkexchange.com/2001/X1374218/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no><a href="http://leader.linkexchange.com/2001/X1374218/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/2001/X1374218/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/2001/X1374218/clicklogo" target="_top"><img src="http://leader.linkexchange.com/2001/X1374218/showlogo?" width=468 height=16 border=0 ismap alt=""></a></NOSCRIPT></P>
+</DIV>
+
+
+</TD>
+</TR>
+</TABLE>
+<!-- Main table end -->
+
+<CENTER><HR SIZE="1" WIDTH="95%" ALIGN="center" NOSHADE>
+<FONT SIZE="1" FACE="verdana,arial,helvetica" COLOR="#993333">Invest in the future - Hug your kid today.</FONT>
+<BR><IMG SRC="tack/smiley2.gif" WIDTH="13" HEIGHT="13" ALT="" BORDER="0">
+<P>&nbsp;</CENTER>
+
+
+
+
+</BODY>
+</HTML>

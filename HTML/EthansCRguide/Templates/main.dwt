@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style/ethan.css" />
+<meta charset="utf-8">
+
+<!-- TemplateBeginEditable name="title" -->
+<title>layout</title>
+<!-- TemplateEndEditable -->
+
+</head>
+<body>
+
+<center><img src="images/crlogo.jpg">
+<h1><b>Ethan's Clash Royal Arena</b></h1></center>
+<div class="menu">
+	<a href="index.html">Homepage</a><br>
+	<a href="decks.html">Decks</a><br>
+    <a href="tips.html">Tips</a><br>
+    <a href="updates.html">Updates</a><br>
+    <a href="modes.html">Game Modes</a><br>
+    <br>
+</div>
+
+<!-- TemplateBeginEditable name="PageTitle" -->
+<h2>Welcome to Ethan's Clash Royal Arena!</h2>
+<!-- TemplateEndEditable -->
+
+<!-- TemplateBeginEditable name="content" -->
+<center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae varius neque. Aenean ornare tincidunt nisl, id gravida sapien elementum nec. Nullam luctus accumsan orci vitae varius. Etiam sem augue, volutpat vitae rutrum eget, egestas non eros. Maecenas ultrices sem sed est ultricies, ut viverra lectus eleifend. Integer consequat, urna id finibus sollicitudin, ex nisi vehicula tortor, in mollis nulla dui eget urna. Nam ornare, nibh id bibendum convallis, ex metus viverra odio, quis eleifend neque ante at massa. Nunc odio felis, pharetra a rutrum in, bibendum non tellus.</p>
+<img src="images/crgameplay.jpg" width=225 length=400>
+<p>Sed pulvinar enim eget vehicula dictum. Pellentesque dignissim lorem purus. Nam eget lobortis sem, vitae condimentum metus. Curabitur fringilla venenatis dolor, eu sodales nunc hendrerit nec. Donec maximus tempus ipsum. In velit massa, auctor vel felis sed, aliquam pulvinar diam. Suspendisse maximus varius lorem, nec aliquet neque ullamcorper vel. Ut vulputate sem eu turpis tincidunt ullamcorper. Duis lorem orci, eleifend eget eros at, laoreet molestie felis. Phasellus viverra iaculis facilisis. Suspendisse ut neque hendrerit, tincidunt ex vel, rutrum est. Phasellus ullamcorper velit vel arcu consectetur, molestie imperdiet lorem consectetur. Integer aliquam sollicitudin nisl.</p>
+<img src="images/clashroyalebattleram.png">
+<p>Aenean porta diam sed nisl faucibus, id sagittis ipsum sagittis. Vivamus mattis turpis sem, quis auctor sapien efficitur vel. Curabitur imperdiet erat quis leo scelerisque, id interdum est ullamcorper. Sed ac ultricies ex. Etiam convallis ligula pellentesque sem pellentesque tincidunt. Ut rhoncus, turpis ac lacinia semper, tellus mi feugiat nibh, nec sodales velit eros eget tortor. Vestibulum tincidunt ipsum in turpis luctus, sit amet tristique urna commodo. Nullam varius magna sed ullamcorper fermentum. Proin ac dignissim tortor. Sed at ultricies ipsum, eu porta lorem. Praesent iaculis eget nisl eget ullamcorper. Vestibulum eu dolor egestas, dignissim lectus vel, consequat odio.</p>
+<img src="images/crarenas.jpg">
+<p>Ut in urna urna. In augue velit, gravida et urna vitae, congue lacinia lacus. Sed lobortis nunc quis blandit fringilla. Nam rutrum purus dolor, a porta sapien pretium eu. Aenean a leo pretium, porttitor est at, luctus est. Proin et dui molestie, volutpat turpis ut, suscipit lorem. Pellentesque blandit, metus in hendrerit sagittis, metus turpis interdum libero, sit amet auctor est eros at diam. Fusce at sapien condimentum, placerat sem sed, feugiat nulla. Suspendisse potenti. Etiam ante tortor, convallis id lacus eu, suscipit porttitor augue.</p>
+<img src="images/crchests.jpg">
+<p>Pellentesque luctus purus sit amet augue venenatis, sed tempus enim sodales. Donec tincidunt pulvinar ligula, non molestie turpis ultrices at. Integer eu ex euismod, tristique urna in, volutpat justo. Donec justo libero, gravida non congue eget, sagittis eget sem. Nullam placerat nisl in lectus vehicula rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras augue nulla, tempus sit amet condimentum vel, dignissim non ex. Curabitur sit amet aliquam massa. Praesent sollicitudin felis ut sem condimentum ullamcorper. Praesent interdum nunc sit amet lectus molestie, vitae tempor justo pellentesque. Duis dui tellus, ornare eget gravida nec, consectetur at sem. Quisque posuere laoreet mi. Proin porta enim metus, sed placerat urna convallis vitae.</p>
+<img src="images/cremotes.png"></center>
+<!-- TemplateEndEditable -->
+<center><img src="images/thumbs_up.jpg"></center>
+</body>
+</html>
